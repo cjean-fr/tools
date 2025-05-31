@@ -15,10 +15,10 @@ if [ -f "composer.json" ] && grep -q "\"$SCRIPT_NAME\"" composer.json; then
     exit 0
 fi
 
-# Vérifie et exécute le script npm si disponible
+# Vérifie et exécute le script pnpm si disponible
 if [ -f "package.json" ] && grep -q "\"$SCRIPT_NAME\"" package.json; then
-    echo "Exécution de 'npm run $SCRIPT_NAME'..."
-    npm run "$SCRIPT_NAME"
+    echo "Exécution de 'pnpm run $SCRIPT_NAME'..."
+    pnpm run "$SCRIPT_NAME"
     exit 0
 fi
 
@@ -50,7 +50,7 @@ fi
 if [ -f "package.json" ]; then
     echo ""
     echo "Scripts disponibles dans package.json :"
-    npm run
+    pnpm run
 fi
 
 exit 1
